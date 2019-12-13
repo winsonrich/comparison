@@ -1,0 +1,32 @@
+Sub CompareandHighlight()
+    Dim n As Integer
+    Dim sh As Worksheets
+    Dim r As Range
+
+    n = Worksheets("sheet1").Range("B:B").Cells.SpecialCells(xlCellTypeConstants).Count
+    o = Worksheets("sheet2").Range("E:E").Cells.SpecialCells(xlCellTypeConstants).Count
+    Application.ScreenUpdating = False
+
+    Dim match As Boolean
+    Dim valE As String
+    Dim valI As String
+    Dim i As Long, j As Long, k As Long
+    
+    For i = 3 To n
+        For k = 4 To n
+            valE = Trim(Worksheets("sheet1").Range("B" & i).Value)
+            valI = Trim(Worksheets("sheet2").Range("E" & k).Value)
+    
+            If valE = valI Then
+                Worksheets("sheet1").Range("B" & i).Font.Color = RGB(255, 0, 0)
+                Worksheets("sheet2").Range("E" & i).Font.Color = RGB(255, 0, 0)
+                GoTo EndForLoop
+            Else:
+                
+            End If
+        Next k
+EndForLoop:
+    Next i
+
+    Application.ScreenUpdating = True
+End Sub

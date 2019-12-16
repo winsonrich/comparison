@@ -3,8 +3,8 @@ Sub CompareandHighlight()
     Dim sh As Worksheets
     Dim r As Range
 
-    n = Worksheets("sheet1").Range("B:B").Cells.SpecialCells(xlCellTypeConstants).Count
-    o = Worksheets("sheet2").Range("E:E").Cells.SpecialCells(xlCellTypeConstants).Count
+    n = Worksheets("sheet1").Range("B:B").Cells.SpecialCells(xlCellTypeConstants).Count+1
+    o = Worksheets("sheet2").Range("E:E").Cells.SpecialCells(xlCellTypeConstants).Count+1
     Application.ScreenUpdating = False
 
     Dim match As Boolean
